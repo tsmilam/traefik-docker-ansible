@@ -6,10 +6,13 @@
     user: root
     group: docker
     traefik_dir: /var/www/traefik
+    prometheus_dir: /var/www/prometheus
+    grafana_dir: /var/www/grafana
     home_dir: /root
   roles:
-    - user
-    - tools
-    - docker
-    - traefik
-    - watchtower
+    # - user
+    # - tools
+    # - docker
+    # - traefik
+    # - watchtower
+    - monitoring
