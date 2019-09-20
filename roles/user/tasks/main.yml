@@ -15,9 +15,9 @@
     state: present
   loop:
     - regexp: "^PasswordAuthentication"
-      line: "PasswordAuthentication no"
+      line: "PasswordAuthentication yes"
     - regexp: "^PermitRootLogin"
-      line: "PermitRootLogin without-password"
+      line: "PermitRootLogin no"
     - regexp: "^UseDNS"
       line: "UseDNS no"
     - regexp: "^PermitEmptyPasswords"
