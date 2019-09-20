@@ -2,13 +2,8 @@
 - name: Provisionning webservers group
   hosts: webservers
   become: yes
-  vars:
-    user: root
-    group: docker
-    traefik_dir: /var/www/traefik
-    prometheus_dir: /var/www/prometheus
-    grafana_dir: /var/www/grafana
-    home_dir: /root
+  vars_files:
+    - ./playbook-vars.yml
   roles:
     - user
     - tools
