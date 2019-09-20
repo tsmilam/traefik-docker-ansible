@@ -22,13 +22,9 @@
     state: started
     enabled: yes
 
-- name: Adding .zshrc file
-  template:
-    src: ../templates/.zshrc.j2
-    dest: "{{ home_dir }}/.zshrc"
-    owner: "{{ user }}"
-
-- name: Set zsh as default shell
-  user:
-    name: "{{ user }}"
-    shell: /bin/zsh
+- name: Configure bash prompt
+  copy:
+    src: ../files/bash_prompt.sh
+    dest: /etc/profile.d/bash_prompt.sh
+    owner: root
+    group: root
